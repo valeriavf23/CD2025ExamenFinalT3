@@ -30,17 +30,13 @@ public class XestorBateria {
 
     public boolean estaBaleira() {
 
-        if (nivelCarga <= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return nivelCarga <= 0;
 
     }
 
     public boolean necesitaCarga() {
 
-        if (estaBaleira() == true) {
+        if (estaBaleira()) {
             return true;
         }
 
@@ -53,15 +49,15 @@ public class XestorBateria {
             return "Erro";
         }
 
-        if (nivelCarga >= 0 && nivelCarga < 50) {
+        if (nivelCarga < 50) {
             return "Baixa";
         }
 
-        if (nivelCarga >= 50 && nivelCarga < 80) {
+        if (nivelCarga < 80) {
             return "Media";
         }
 
-        if (nivelCarga >= 80 && nivelCarga <= 100) {
+        if (nivelCarga <= 100) {
             return "Alta";
         }
 
